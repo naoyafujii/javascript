@@ -1,0 +1,50 @@
+{
+  "name": "boilerplate",
+  "version": "1.1.0",
+  "description": "boilerplate for front-end development",
+  "private": true,
+  "scripts": {
+    "start": "gulp --gulpfile .gulp/index.js & webpack --config .webpack/webpack.dev.js --watch & node .serve.js",
+    "build": "rimraf ./dist && gulp --gulpfile .gulp/index.js build && webpack --config .webpack/webpack.prod.js"
+  },
+  "author": "Ryohei endo",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-ejs": "^4.1.1",
+    "gulp-htmlhint": "^2.2.1",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-prettify": "^0.5.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "prettier": "^1.18.2",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "core-js": "^3.1.4",
+    "jquery": "^3.4.1",
+    "regenerator-runtime": "^0.13.2"
+  }
+}

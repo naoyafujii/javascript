@@ -29,3 +29,25 @@ const alphabetical = words.reduce((a, x) => {
   return a
 }, {})
 console.log(alphabetical)
+
+// p158
+
+const animals = ['きじ', '猿', '犬']
+const html = `<ul><li>${animals.join('</li><li>')}</li></ul>`
+console.log(html)
+
+// const html2 =
+//   '<ul>' + animals.forEach(animal => `<li> ${animal} </li>`) + '</ul>'
+
+// console.log(html2)
+
+const members = ['kyosuke', 'takazudo', 'yomotsu']
+let html3 = ''
+
+members.forEach(member => {
+  html3 += `<li>${member}</li>`
+})
+
+document.querySelector('ul').innerHTML = html3
+
+console.log(html3)

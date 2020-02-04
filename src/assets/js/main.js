@@ -173,3 +173,96 @@ Object.keys(object)
   .forEach(prop => {
     console.log(`${prop}: ${object[prop]}`)
   })
+
+const users = [{ name: 'taro' }, { name: 'saburo' }, { name: 'jiro' }]
+
+// let user
+// for (let i = 0; i < users.length; i++) {
+//   if (users[i].name === 'jiro') {
+//     user = users[i]
+//     break
+//   }
+// }
+// console.log(user)
+
+const user = users.find(user => {
+  return user.name === 'jiro'
+})
+
+console.log(user)
+
+// post comment
+
+const postsFind = [{ id: 1, title: '古い投稿' }, { id: 2, title: '新しい投稿' }]
+
+const commentFind = {
+  postId: 2,
+  content: 'いいね',
+}
+
+function postForComment(posts, comment) {
+  return posts.find(post => {
+    return post.id === comment.postId
+  })
+}
+console.log(postForComment(postsFind, commentFind))
+
+const computers = [
+  { name: 'Apple', ram: 24 },
+  { name: 'Compaq', ram: 4 },
+  { name: 'Acer', ram: 32 },
+]
+
+// // 16g必要なソフト
+// // 全てで動かせるフラグ
+// let allComputersCanRun = true
+// // どれかでは動かせるフラグ
+// let someComputersCanRun = false
+
+// for (let i = 0; i < computers.length; i++) {
+//   const computer = computers[i]
+//   if (computer.ram < 16) {
+//     allComputersCanRun = false
+//   } else {
+//     someComputersCanRun = true
+//   }
+// }
+
+// console.log(allComputersCanRun, someComputersCanRun)
+
+// everyとsome
+console.log(
+  computers.every(computer => {
+    return computer.ram >= 16
+  }),
+  computers.some(computer => {
+    return computer.ram >= 16
+  }),
+)
+
+function Field(value) {
+  this.value = value
+}
+
+Field.prototype.validate = function () {
+  return this.value.length > 0
+}
+
+const username = new Field('my_username')
+const password = new Field('my_password')
+const birthday = new Field('2020/10/30')
+
+// console.log(username.validate() && password.validate() && birthday.validate())
+
+const fields = [username, password, birthday]
+
+const formIsValid = fields.every(field => {
+  return field.validate
+})
+console.log(formIsValid)
+
+if (formIsValid) {
+  // サーバーにリクエスト
+} else {
+  // エラーを表示
+}
